@@ -1,0 +1,8 @@
+#ifndef DEFS_H
+#define DEFS_H
+
+enum {INVALID = -1, NONE, BLOCK, WALL, DOOR, BOMB , FIRE, EXPLOSION,BOMBER_MAN};
+
+#define FRAMES_PER_SEC 15
+
+#endif
