@@ -16,6 +16,7 @@ void TileMapLoadFile( TileMap *tile_map, const char *file_name )
     
     int width;
     int height;
+    int i;
     
     if( file )
     {
@@ -42,7 +43,7 @@ void TileMapLoadFile( TileMap *tile_map, const char *file_name )
         
         }
 
-        for( int i = 0 ; i < width * height ; i++ )
+        for( i = 0 ; i < width * height ; i++ )
         {
             if(  fscanf( file,"%d", &tile_map->tiles[i].code ) < 0 )
             {
@@ -64,10 +65,12 @@ void TileMapDrawTiles( TileMap *tile_map, BITMAP **images , BITMAP *buffer )
 {
 
     int code;
+    int i;
+    int j;
     
-    for( int i = 0; i < tile_map->h; i++ )
+    for( i = 0; i < tile_map->h; i++ )
     {
-        for( int j = 0; j < tile_map->w; j++ )
+        for( j = 0; j < tile_map->w; j++ )
         {
             code = (tile_map->tiles + j + i * tile_map->h )->code;
             
